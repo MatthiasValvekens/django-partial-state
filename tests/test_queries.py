@@ -51,7 +51,7 @@ class TestInheritanceScenario(TestCase):
         #  wrapped_object
         self.assertEqual(partial_obj.user_ptr_id, self.example_user.pk)
         self.assertEqual(partial_obj.user_ptr, self.example_user)
-        wrapped = partial_obj.wrap()
+        wrapped = partial_obj.wrap(populate_relations=True)
         self.assertEqual(wrapped.user_ptr.pk, self.example_user.pk)
         # wrapped.email does not work as things are now
         self.assertEqual(wrapped.user_ptr.email, 'abc@example.com')
