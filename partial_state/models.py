@@ -112,7 +112,7 @@ class ExpiryDefault:
         self.lifetime = lifetime
 
     def __call__(self):
-        return timezone.now() + self.state_lifetime
+        return timezone.now() + self.lifetime
 
 
 class PartialStateRecord:
